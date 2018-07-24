@@ -1,0 +1,6 @@
+en:
+  js:
+    mark:
+      title: Highlight Text
+    composer:
+      mark_text: "This text will be highlighted"
