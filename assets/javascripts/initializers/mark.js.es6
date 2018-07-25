@@ -1,5 +1,4 @@
-import { withPluginApi } from 'discourse/lib/plugin-api';
-import ComposerController from 'discourse/controllers/composer';
+import { withPluginApi } from "discourse/lib/plugin-api";
 
 function initializeMark(api) {
   api.addToolbarPopupMenuOptionsCallback(() => {
@@ -10,7 +9,7 @@ function initializeMark(api) {
     };
   });
 
-  ComposerController.reopen({
+  api.modifyClass("controller:composer", {
     actions: {
       insertMark() {
         this.get("toolbarEvent").applySurround(
@@ -26,10 +25,8 @@ function initializeMark(api) {
 
 export default {
   name: "apply-mark",
-  initialize(container) {
-    const siteSettings = container.lookup('site-settings:main');
-    if (siteSettings.mark_enabled) {
-      withPluginApi('0.8.23', initializeMark, { noApi: () => decorateCooked(container, mark) });
-    }
+
+  initialize() {
+     withPluginApi("0.8.23", initializeMark);
   }
 };

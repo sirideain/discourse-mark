@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'pretty_text'
 
 describe PrettyText do
   before do
@@ -13,7 +14,7 @@ describe PrettyText do
     MD
 
     html = <<~HTML
-      <mark>Marked Text</mark>
+      ==Marked Text==
     HTML
 
     cooked = PrettyText.cook markdown.strip
