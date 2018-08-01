@@ -26,7 +26,11 @@ function initializeMark(api) {
 export default {
   name: "apply-mark",
 
-  initialize() {
-     withPluginApi("0.8.23", initializeMark);
+  initialize(container) {
+    if (!container.lookup('site-settings:main').mark_enabled) {
+      return;
+    }
+
+    withPluginApi("0.8.23", initializeMark);
   }
 };
