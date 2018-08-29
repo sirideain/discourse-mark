@@ -14,7 +14,7 @@ describe PrettyText do
     MD
 
     html = <<~HTML
-      ==Marked Text==
+      <p>==Marked Text==</p>
     HTML
 
     cooked = PrettyText.cook markdown.strip
@@ -27,7 +27,7 @@ describe PrettyText do
     MD
 
     html = <<~HTML
-      <mark>Marked Text</mark>
+      <p><mark>Marked Text</mark></p>
     HTML
 
     cooked = PrettyText.cook markdown.strip
