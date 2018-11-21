@@ -4,7 +4,7 @@ function initializeMark(api) {
   api.addToolbarPopupMenuOptionsCallback(() => {
     return {
       action: "insertMark",
-      icon: "black-tie",
+      icon: "highlighter",
       label: "mark.title"
     };
   });

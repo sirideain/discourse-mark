@@ -6,4 +6,5 @@
 
 enabled_site_setting :mark_enabled
 
+register_svg_icon "highlighter" if respond_to?(:register_svg_icon)
 register_asset "javascripts/vendor/markdown-it-mark.js", :vendored_pretty_text
